@@ -163,14 +163,16 @@
     \advance\beamer@tempdim by \beamer@leftmargin%
     \advance\beamer@tempdim by \beamer@rightmargin%
     \hskip-\Gm@lmargin\hbox{%
-      \setbox\beamer@tempbox=\hbox{\begin{minipage}[b]{\paperwidth}%
+      \setbox\beamer@tempbox=\hbox{
+      \begin{figure}
+      	\begin{minipage}[b]{\paperwidth}%
           \vbox{}\vskip-.75ex%
           \leftskip0.3cm%
           \rightskip0.3cm plus1fil\leavevmode
             \insertframetitle 
-            \ifbeamer@icclabt \hfill {\Large \trjnfamily ZHAW} 
-            \else \ifbeamer@icclabtm \hfill {\large \trjnfamily ZHAW} 
-            \else \ifbeamer@icclabts \hfill {\small \trjnfamily ZHAW} \fi \fi
+            \ifbeamer@icclabt \hfill {\includegraphics[width=0.8in]{icclab/zhaw}}
+            \else \ifbeamer@icclabtm \hfill \includegraphics[width=0.8in]{icclab/zhaw} 
+            \else \ifbeamer@icclabts \hfill \includegraphics[width=0.8in]{icclab/zhaw} \fi \fi
             \fi%
           \ifx\insertframesubtitle\@empty%
             \strut\par%
@@ -179,7 +181,7 @@
           \fi%
           \nointerlineskip
           \vbox{}%
-          \end{minipage}}%
+          \end{minipage}\end{figure}}%
       \beamer@tempdim=\ht\beamer@tempbox%
       \advance\beamer@tempdim by 2pt%
       \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{\beamer@tempdim}
